@@ -12,8 +12,9 @@
       const sendButton = document.getElementById('sendButton');
 
       socket.on('chat message', (msg) => {
+        console.log(msg);
         const listItem = document.createElement('li');
-        listItem.textContent = msg;
+        listItem.textContent = msg.text;
         messagesList.appendChild(listItem);
       });
 

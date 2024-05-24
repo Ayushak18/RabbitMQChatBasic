@@ -44,7 +44,7 @@ amqp.connect(RABBITMQ_URL, (err, connection) => {
         console.log(`Received message for ${socket.id}: ${receivedMessage.text}`);
 
         // Emit the message to the specific user
-        socket.emit('chat message', receivedMessage.text);
+        socket.emit('chat message', receivedMessage);
         channel.ack(msg);
 
         }
